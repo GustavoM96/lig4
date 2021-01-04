@@ -19,3 +19,24 @@ div{
     margin: 5px;
     background-color: white;
 }
+/* Gustavo */
+body{
+    font-size: 20px;
+}
+h1{
+    text-align: center;
+    font-size: 2.5rem;
+}
+h2{
+    text-align: center;
+    font-size: 1.5rem;
+}
+div#ponto{
+    border: 2px solid black;
+    margin: 0 auto;
+    width: 50%;
+
+}
+p{
+    text-align: center;
+}
