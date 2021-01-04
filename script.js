@@ -7,3 +7,6 @@ let a = 13
 
 let b = 17
 
+let c = a + b;
+
+c = c - 2 + 3 -3;
