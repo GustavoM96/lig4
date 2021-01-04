@@ -1,10 +1,19 @@
+:root{
+    --primary-blue: #192a56;
+    --primary-white: #f5f6fa;
+    --secundy-white: #dcdde1 ;
+    --primary-shadow: #353b48;
+    --primary-black: #2f3640;
+}
+
 main{
     width: 810px;
-    height: 400px;
+    height: 550px;
     display: flex;
     flex-direction: row;
-    margin: 100px auto;
-    background-color: blue;
+    margin:0 auto;
+    background-color: var(--primary-blue);
+    box-shadow: 8px 8px 10px var(--primary-shadow);
 }
 
 section{
@@ -14,8 +23,14 @@ section{
     width: 115px;
 }
 div{
-    width: 110px;
-    height: 60px;
-    margin: 5px;
-    background-color: white;
+    width: 80px;
+    height: 80px;
+    margin: 10px 15px 0px 15px;
+    background-color: var(--primary-white);
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+div:hover{
+    background-color: var(--secundy-white);
 }
