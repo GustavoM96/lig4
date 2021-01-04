@@ -1,11 +1,31 @@
 //---Gustavo
+
+let b = 8
+
+
+
+
 //---Caio
+
+
+
+
+
+
 //---Jardel
+
+const createMap = () => {
+    for(let i = 0; i < 7; i++){
+        let createColum = document.createElement("section");
+        for(let j = 0; j < 6; j++){
+            let createCell = document.createElement("div");
+            createColum.appendChild(createCell)
+        }
+        document.querySelector("main").appendChild(createColum)
+    }
+    
+}
+
+createMap()
+
 //---Andre
-
-let a = 10
-
-let c = a + b;
-
-c = c - 2 + 3 -3;
-
