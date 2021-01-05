@@ -42,7 +42,7 @@ div:hover{
 body{
     font-size: 20px;
     font-family: 'Oxygen Mono', monospace;
-    background-image: linear-gradient(to bottom right, black, black, #790000);
+    background-image: linear-gradient(to right, black, black, #790000);
     background-size: 100vw 100vh;
 }
 h1#high{
