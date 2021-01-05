@@ -25,6 +25,8 @@ const createMap = () => {
             const createCell = document.createElement("div");
             createCell.classList.add(`cel${j}`)
             createColum.appendChild(createCell)
+            createColum.addEventListener('click', mark);
+            
         }
         document.querySelector("main").appendChild(createColum)
         
