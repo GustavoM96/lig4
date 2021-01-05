@@ -16,13 +16,13 @@ main{
     box-shadow: 8px 8px 10px var(--primary-shadow);
 }
 
-section{
+.sectionColuns{
     display: flex;
     flex-direction: column;
     align-content: space-around;
     width: 115px;
 }
-div{
+.sectionColuns div{
     width: 80px;
     height: 80px;
     margin: 10px 15px 0px 15px;
@@ -31,6 +31,6 @@ div{
     cursor: pointer;
 }
 
-div:hover{
+.sectionColuns div:hover{
     background-color: var(--secundy-white);
 }
