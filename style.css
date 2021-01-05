@@ -43,6 +43,7 @@ body{
     font-family: 'Black Ops One', cursive;
     background-image: linear-gradient(to right, black, black, #790000);
     background-size: 100vw 100vh;
+    padding: 25px;
 }
 section#players{
     display: flex;
@@ -95,7 +96,11 @@ p{
     text-align: center;
 }
 button{
-    margin-left: auto;
-    
+    padding: 5px;
+    border-radius: 2px;
+        
+}
+button:hover{
+    cursor: pointer;
 }
 
