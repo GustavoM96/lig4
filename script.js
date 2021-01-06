@@ -112,6 +112,7 @@ const mark = (e) => {
 createMap();
 
 
+//--função botão reload
 
 let button = document.getElementById('botao')
     button.addEventListener('click', botao)
@@ -121,5 +122,19 @@ let button = document.getElementById('botao')
        player = 0
         for(let i = 0; i < selecionaCelula.length; i++){
             selecionaCelula[i].style.backgroundColor = ''
+        }
+    }
+
+
+//--condição de empate
+
+    function condicaoDeEmpate() {
+        let selecionaCelula = document.querySelectorAll('.sectionColuns div')
+       
+        for(let i = 0; i < selecionaCelula.length; i++){
+            selecionaCelula[i] = false
+            if(selecionaCelula[i] === false){
+                alert
+            }
         }
     }
