@@ -103,12 +103,20 @@ p{
     color: white;
     font-size: 1rem;
 }
+
+.bts{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 button{
     display: block;
     cursor: pointer;
     outline: none;
-    margin:0 auto;
+    margin: 5px;
     padding: 5px;
+    font-size: 1rem;
 }
 
 
@@ -134,5 +142,26 @@ button{
         width: 100%;
         left: 0;
         top: 20px;
+    }
+    .bts{
+        width: 300px;
+        margin: 0 auto;
+        justify-content: space-around;
+    }
+    button{
+        padding: 2px;
+        
+    }
+}
+
+@media (min-width: 1180px){
+    .bts{
+        width: 480px;
+        margin: 0 auto;
+        justify-content: space-around;
+    }
+    button{
+        padding: 5px;
+        
     }
 }

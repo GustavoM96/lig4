@@ -37,7 +37,7 @@ const createMap = () => {
 const animation = (n, i) => {
     n.animate([
         // keyframes
-        { transform: `translateY(-${i*110}px)` },
+        { transform: `translateY(-${220*(i + 1)}px)` },
         { transform: 'translateY(0)' }
       ], {
         // timing options
