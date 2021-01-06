@@ -6,10 +6,10 @@ let count=5;
 
 
 let board = [
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 1, 0, 0],
+    [0, 0, 0, 1, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0]
 ];
@@ -158,7 +158,7 @@ const mark = (e) => {
 
 const conditionWin=(board)=>{
     let status=false;    
-    const edgeY=board[0].length -3;
+    const edgeY=board.length -3;
     const edgeX=board[0].length -3;
     
     for(let i=0;i < board.length;i++){
@@ -202,6 +202,7 @@ const conditionWin=(board)=>{
             for(let j = 0; j < edgeX; j++) {
     
                 cell = board[i][j];
+                
     
                       if(cell !== 0){
                             if (cell === board[i+1][j+1] && cell === board[i+2][j+2] && cell === board[i+3][j+3]) {
@@ -214,21 +215,27 @@ const conditionWin=(board)=>{
     
     
     
-    for (let i = 2; i < board.length; i++) {
+    for (let i = 3; i < board.length; i++) {
     
         for (let j = 0; j < edgeX; j++) {
             cell = board[i][j];
-     
+            // console.log(`${i}${j}`)
+            
             if (cell !== 0) {
      
                 
-                if(cell === board[i-1][j+1] && cell === board[i-2][j+2] && cell === cell === board[i-2][j+3]){
+                if(cell === board[i-1][j+1] && cell === board[i-2][j+2] && cell === board[i-3][j+3]){
                     status= true;
                     console.log(status);
                 }
             }
         }
-     }
+    }
+
+    
+
+
+
     
     return status;
 
