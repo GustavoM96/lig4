@@ -1,19 +1,25 @@
-//---Gustavo
-
 let b = 8
 let player=0;
 let count=5;
+//---Gustavo
+
+let board = [
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0]
+];
+
+const markPontos = ()=>{
+    
+}
 
 //---Caio
 
 
-
-
-
-
 //---Jardel
-
-
 
 
 const createMap = () => {
@@ -26,7 +32,9 @@ const createMap = () => {
             const createCell = document.createElement("div");
             createCell.classList.add(`cel${j}`)
             createColum.appendChild(createCell)
-            createCell.addEventListener('click', mark);
+            createColum.addEventListener('click', mark);
+            
+
         }
         document.querySelector("main").appendChild(createColum)
         
@@ -55,16 +63,24 @@ const mark = (e) => {
 
     for(let i=5; i >= 0; i--){
         let n = change[i];
+        let numCol = n.parentNode.id[n.parentNode.id.length -1] 
+        let numLinha = n.className[n.className.length -1] 
+
         //Verificando se o n possui estilo
         if(n.style.backgroundColor === ""){
+
             if(player === 0 ){
                 n.style.backgroundColor = "red";
                 player=1;
+                board[numLinha][numCol] = 2
+                
             }else{
                 n.style.backgroundColor = "black";
                 player=0; 
+                board[numLinha][numCol] = 1 
+
             }
-            n.classList.add("slide-top")
+            
             animation(n, i)
             break;
         }
