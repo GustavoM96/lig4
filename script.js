@@ -110,3 +110,16 @@ const mark = (e) => {
 }
 
 createMap();
+
+
+
+let button = document.getElementById('botao')
+    button.addEventListener('click', botao)
+
+    function botao() {
+       let selecionaCelula = document.querySelectorAll('.sectionColuns div')
+       player = 0
+        for(let i = 0; i < selecionaCelula.length; i++){
+            selecionaCelula[i].style.backgroundColor = ''
+        }
+    }
