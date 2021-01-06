@@ -4,6 +4,7 @@ let count=5;
 
 //---Gustavo
 
+
 let board = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -13,8 +14,17 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ];
 
+// const setarNome =()=>{
 
-//---Caio
+// }
+// const botaosetarNome = document.getElementById()
+
+
+// const markPontos = ()=>{
+    
+// }
+
+
 
 
 //---Jardel
@@ -89,7 +99,7 @@ const backMove = () => {
 }
 
 const featuredPlayer = () => {
-    console.log(player)
+    
     if(player === 1){
         boxPlayer[0].style.backgroundColor = "#353b48";
         boxPlayer[1].style.backgroundColor = "";
@@ -146,8 +156,6 @@ const mark = (e) => {
     conditionWin(board);
     
 }
-
-createMap()
 
 
 const conditionWin=(board)=>{
@@ -228,8 +236,29 @@ for(let i = 0; i < edgeY; i++){
             }
           }
         }
-      }
+
+     }
     
-    
+    return status;
+
     }
+
+    //---Caio
+
+
+    createMap();
+    let button = document.getElementById('botao')
+    button.addEventListener('click', botao)
+
+    function botao() {
+       let selecionaCelula = document.querySelectorAll('.sectionColuns div')
+       player = 0
+        for(let i = 0; i < selecionaCelula.length; i++){
+            selecionaCelula[i].style.backgroundColor = ''
+        }
+    }
+
+
+    
+    
     
