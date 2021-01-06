@@ -13,9 +13,6 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ];
 
-const markPontos = ()=>{
-    
-}
 
 //---Caio
 
@@ -78,6 +75,7 @@ document.getElementById("name").addEventListener("click", selectNamePlayer);
 //---Andre
 
 const mark = (e) => {
+    conditionWin(board);
     let change = e.target.parentNode.children;
     if(e.target.classList[0] === "sectionColuns"){
         change = e.target.children;
@@ -111,7 +109,7 @@ const mark = (e) => {
     }
     
     e.stopPropagation();
-    conditionWin(board);
+    
 }
 
 createMap()
