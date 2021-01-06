@@ -143,6 +143,7 @@ const mark = (e) => {
     }
     
     e.stopPropagation();
+    conditionWin(board);
     
 }
 
@@ -151,7 +152,7 @@ createMap()
 
 const conditionWin=(board)=>{
     let status=false;    
-    const edgeY=board[0].length -3;
+    const edgeY=board.length -3;
     const edgeX=board[0].length -3;
     
     for(let i=0;i < board.length;i++){
@@ -170,22 +171,27 @@ const conditionWin=(board)=>{
     
     
     
-    for(let i=0;i < edgeY;i++){
+  
+for(let i = 0; i < edgeY; i++){
+
+    
+    for(let j = 0; j < board[0].length; j++) {
+      cell = board[i][j];
+      
+     
+      if(cell !== 0) {
         
-        for(let j=0;j <board.length;j++){
-    
-            let cell = board[i][j];
-    
-                if(cell !== 0){
-    
-                    if(cell === board[i+1][j] && cell === board[i+2][j] && cell === board[i+3][j]){
-                        status= true;
-                        console.log(status);
-                }
-            }
-            
+       
+        if(cell === board[i+1][j] && cell === board[i+2][j] && 
+            cell === board[i+3][j]) {
+           status=true;
+          console.log(status);
         }
+      }
     }
+  }
+  
+    
     
     
     
@@ -207,25 +213,23 @@ const conditionWin=(board)=>{
     
     
     
-    for (let i = 2; i < board.length; i++) {
-    
-        for (let j = 0; j < edgeX; j++) {
-            cell = board[i][j];
-     
-            if (cell !== 0) {
-     
-                
-                if(cell === board[i-1][j+1] && cell === board[i-2][j+2] && cell === cell === board[i-2][j+3]){
-                    status= true;
-                    console.log(status);
-                }
-            }
-        }
-     }
-    
-    return status;
+    for(let y = 12; y < board.length; y++){
 
+        // iterate each cell in the row
+        for(let x = 0; x < edgeX; x++) {
+          cell = board[y][x];
+          
+          // Only check if cell is filled
+          if(cell !== 0) {
+            
+            // Check the next two cells for the same value
+            if(cell === board[y-1][x+1] && cell === board[y-2][x+2]) {
+              console.log("3 in a row down-left found at " + (x+1) + ":" + (y+1))
+            }
+          }
+        }
+      }
+    
+    
     }
-    
-    
     
