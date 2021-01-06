@@ -63,6 +63,14 @@ div.placar{
     margin: 0 auto;
 }
 
+div#modal{
+    width: 300px;
+    height: 150px;
+    background-color: black;
+    border: 5px solid #790000 ;
+    padding: 5px;
+}
+
 h1{
     color: var(--primary-white);
     font-size: 3rem;
@@ -111,6 +119,11 @@ p{
     flex-direction: row;
     justify-content: center;
 }
+
+label{
+    color: white;
+}
+
 button{
     display: block;
     cursor: pointer;
@@ -118,6 +131,12 @@ button{
     margin: 5px;
     padding: 5px;
     font-size: 1rem;
+}
+button#escolhaPlayer{
+    background-color: green;
+    border: 3px solid white;
+    
+    margin: 0 auto;
 }
 
 
