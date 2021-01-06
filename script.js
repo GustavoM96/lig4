@@ -118,6 +118,7 @@ document.getElementById("name").addEventListener("click", selectNamePlayer);
 //---Andre
 
 const mark = (e) => {
+    conditionWin(board);
     let change = e.target.parentNode.children;
     if(e.target.classList[0] === "sectionColuns"){
         change = e.target.children;
@@ -152,7 +153,8 @@ const mark = (e) => {
     }
     
     e.stopPropagation();
-    conditionWin(board);
+   
+    
 }
 
 
@@ -177,23 +179,26 @@ const conditionWin=(board)=>{
     
     
     
-    for(let i=0;i < edgeY;i++){
+  
+for(let i = 0; i < edgeY; i++){
+
+    
+    for(let j = 0; j < board[0].length; j++) {
+      cell = board[i][j];
+      
+     
+      if(cell !== 0) {
         
-        for(let j=0;j <board.length;j++){
-    
-            let cell = board[i][j];
-    
-                if(cell !== 0){
-    
-                    if(cell === board[i+1][j] && cell === board[i+2][j] && cell === board[i+3][j]){
-                        status= true;
-                        console.log(status);
-                }
-            }
-            
+       
+        if(cell === board[i+1][j] && cell === board[i+2][j] && 
+            cell === board[i+3][j]) {
+           status=true;
+          console.log(status);
         }
+      }
     }
-    
+  }
+  
     
     
     
@@ -213,30 +218,22 @@ const conditionWin=(board)=>{
             }
     }
     
-    
-    
+
     for (let i = 3; i < board.length; i++) {
     
         for (let j = 0; j < edgeX; j++) {
             cell = board[i][j];
-            // console.log(`${i}${j}`)
-            
+                        
             if (cell !== 0) {
-     
-                
+                     
                 if(cell === board[i-1][j+1] && cell === board[i-2][j+2] && cell === board[i-3][j+3]){
                     status= true;
                     console.log(status);
                 }
+
             }
-        }
-    }
-
-    
-
-
-
-    
+          }
+        } 
     return status;
 
     }
@@ -255,6 +252,7 @@ const conditionWin=(board)=>{
             selecionaCelula[i].style.backgroundColor = ''
         }
     }
+
 
     
     

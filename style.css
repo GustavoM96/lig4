@@ -1,12 +1,11 @@
 /* Jardel */
 :root{
 
-    --primary-main: #2f3542ab;
+    --primary-main: #2f3542;
     --primary-white: #f5f6fa;
     --secundy-white: #ced6e0 ;
     --primary-shadow: #353b48;
-    --primary-black: #2f3640;
-    --primary-button-go: #35DE4A;
+    --primary-black: #8cb4ec;
 }
 
 main{
@@ -64,18 +63,12 @@ div.placar{
     margin: 0 auto;
 }
 
-
-
-
 div#modal{
-    border: 5px solid rgb(128, 28, 28);
-    background-color: white;
     width: 300px;
-    height: 150px;    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    height: 150px;
+    background-color: black;
+    border: 5px solid #790000 ;
+    padding: 5px;
 }
 
 h1{
@@ -126,6 +119,11 @@ p{
     flex-direction: row;
     justify-content: center;
 }
+
+label{
+    color: white;
+}
+
 button{
     display: block;
     cursor: pointer;
@@ -135,8 +133,10 @@ button{
     font-size: 1rem;
 }
 button#escolhaPlayer{
-    background-color: var(--primary-button-go) ;
-    border: 2px solid black;
+    background-color: green;
+    border: 3px solid white;
+    
+    margin: 0 auto;
 }
 
 
