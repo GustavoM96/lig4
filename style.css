@@ -1,8 +1,9 @@
 /* Jardel */
 :root{
+
     --primary-main: #2f3542ab;
     --primary-white: #f5f6fa;
-    --secundy-white: #dcdde1 ;
+    --secundy-white: #ced6e0 ;
     --primary-shadow: #353b48;
     --primary-black: #2f3640;
     --primary-button-go: #35DE4A;
@@ -35,7 +36,7 @@ main{
     cursor: pointer;
 }
 
-.sectionColuns div:hover{
+.sectionColuns:hover div{
     background-color: var(--secundy-white);
 
 }

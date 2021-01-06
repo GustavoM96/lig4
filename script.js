@@ -1,6 +1,7 @@
 let b = 8
-let player=0;
+let player=1;
 let count=5;
+
 //---Gustavo
 
 
@@ -13,36 +14,40 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ];
 
-const setarNome =()=>{
+// const setarNome =()=>{
 
-}
-const botaosetarNome = document.getElementById()
+// }
+// const botaosetarNome = document.getElementById()
 
 
-const markPontos = ()=>{
+// const markPontos = ()=>{
     
-}
+// }
 
-//---Caio
+
 
 
 //---Jardel
 
+const boxPlayer = document.querySelectorAll("#players figure")
 
 const createMap = () => {
     for(let i = 0; i < 7; i++){
         const createColum = document.createElement("section");
         createColum.id = `coluna${i}`;
         createColum.classList.add("sectionColuns")
+
         createColum.addEventListener('click', mark);
+
         for(let j = 0; j < 6; j++){
+        
+            
             const createCell = document.createElement("div");
             createCell.classList.add(`cel${j}`)
             createColum.appendChild(createCell)
             createColum.addEventListener('click', mark);
-            
-
         }
+      
         document.querySelector("main").appendChild(createColum)
         
     }
@@ -93,6 +98,19 @@ const backMove = () => {
     }
 }
 
+const featuredPlayer = () => {
+    
+    if(player === 1){
+        boxPlayer[0].style.backgroundColor = "#353b48";
+        boxPlayer[1].style.backgroundColor = "";
+    }else{
+        boxPlayer[1].style.backgroundColor = "#353b48";
+        boxPlayer[0].style.backgroundColor = "";
+    }
+}
+
+boxPlayer[0].style.backgroundColor = "#353b48";
+
 document.getElementById("backMove").addEventListener("click", backMove)
 
 document.getElementById("name").addEventListener("click", selectNamePlayer);
@@ -104,6 +122,7 @@ const mark = (e) => {
     if(e.target.classList[0] === "sectionColuns"){
         change = e.target.children;
     }
+
 
     for(let i=5; i >= 0; i--){
         let n = change[i];
@@ -126,18 +145,100 @@ const mark = (e) => {
             }
             containerPlayer.push(n);
             animation(n, i)
+            featuredPlayer()
             break;
         }
         
     }
-    e.stopPropagation()
+    
+    e.stopPropagation();
+    conditionWin(board);
 }
 
-createMap();
+
+const conditionWin=(board)=>{
+    let status=false;    
+    const edgeY=board[0].length -3;
+    const edgeX=board[0].length -3;
+    
+    for(let i=0;i < board.length;i++){
+        
+        for(let j=0;j < edgeX;j++){
+                let cell = board[i][j];
+                if(cell !== 0){
+                    if(cell === board[i][j+1] && cell === board[i][j+2] && cell === board[i][j+3]){
+                        status= true;
+                        console.log(status);
+                    }
+                }
+            
+        }
+    }
+    
+    
+    
+    for(let i=0;i < edgeY;i++){
+        
+        for(let j=0;j <board.length;j++){
+    
+            let cell = board[i][j];
+    
+                if(cell !== 0){
+    
+                    if(cell === board[i+1][j] && cell === board[i+2][j] && cell === board[i+3][j]){
+                        status= true;
+                        console.log(status);
+                }
+            }
+            
+        }
+    }
+    
+    
+    
+    
+    for (let i = 0; i < edgeY; i++) {
+    
+            for(let j = 0; j < edgeX; j++) {
+    
+                cell = board[i][j];
+    
+                      if(cell !== 0){
+                            if (cell === board[i+1][j+1] && cell === board[i+2][j+2] && cell === board[i+3][j+3]) {
+                                status= true;
+                                console.log(status);
+                            }
+                    }
+            }
+    }
+    
+    
+    
+    for (let i = 2; i < board.length; i++) {
+    
+        for (let j = 0; j < edgeX; j++) {
+            cell = board[i][j];
+     
+            if (cell !== 0) {
+     
+                
+                if(cell === board[i-1][j+1] && cell === board[i-2][j+2] && cell === cell === board[i-2][j+3]){
+                    status= true;
+                    console.log(status);
+                }
+            }
+        }
+     }
+    
+    return status;
+
+    }
+
+    //---Caio
 
 
-
-let button = document.getElementById('botao')
+    createMap();
+    let button = document.getElementById('botao')
     button.addEventListener('click', botao)
 
     function botao() {
@@ -147,3 +248,6 @@ let button = document.getElementById('botao')
             selecionaCelula[i].style.backgroundColor = ''
         }
     }
+
+    
+    
