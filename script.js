@@ -153,7 +153,7 @@ const mark = (e) => {
     }
     
     e.stopPropagation();
-    conditionWin(board);
+   
     
 }
 
@@ -221,18 +221,20 @@ for(let i = 0; i < edgeY; i++){
     
     
     
-    for(let y = 12; y < board.length; y++){
+    for(let i = 3; i < board.length; i++){
 
         // iterate each cell in the row
-        for(let x = 0; x < edgeX; x++) {
-          cell = board[y][x];
+        for(let j = 0; j < edgeX; j++) {
+          cell = board[i][j];
           
           // Only check if cell is filled
           if(cell !== 0) {
             
             // Check the next two cells for the same value
-            if(cell === board[y-1][x+1] && cell === board[y-2][x+2]) {
-              console.log("3 in a row down-left found at " + (x+1) + ":" + (y+1))
+            if(cell === board[i-1][j+1] && cell === board[i-2][j+2]
+                && cell === board[i-3][j+3]){
+              status=true;
+              console.log(status);
             }
           }
         }
@@ -259,6 +261,5 @@ for(let i = 0; i < edgeY; i++){
     }
 
 
-    
     
     
