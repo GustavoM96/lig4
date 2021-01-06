@@ -45,6 +45,26 @@ const animation = (n, i) => {
       });
 }
 
+const selectNamePlayer = () => {
+    const locationForName = document.querySelectorAll("figure figcaption p");
+    let playerName1 = window.prompt("Nome do Jogador Preto:");
+    let playerName2 = window.prompt("Nome do Jogador Vermelho:");
+
+    if(playerName1 == ""){
+        playerName1 = "Player1";
+    }
+
+    if(playerName2 ==  ""){
+        playerName2 = "Player2";
+    }
+
+    locationForName[0].innerHTML = playerName1;
+    locationForName[1].innerHTML = playerName2;
+
+}
+
+document.getElementById("name").addEventListener("click", selectNamePlayer);
+
 //---Andre
 
 const mark = (e) => {
