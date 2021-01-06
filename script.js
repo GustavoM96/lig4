@@ -1,5 +1,5 @@
 let b = 8
-let player=0;
+let player=1;
 let count=5;
 //---Gustavo
 
@@ -21,6 +21,7 @@ const markPontos = ()=>{
 
 //---Jardel
 
+const boxPlayer = document.querySelectorAll("#players figure")
 
 const createMap = () => {
     for(let i = 0; i < 7; i++){
@@ -86,6 +87,19 @@ const backMove = () => {
     }
 }
 
+const featuredPlayer = () => {
+    console.log(player)
+    if(player === 1){
+        boxPlayer[0].style.backgroundColor = "#353b48";
+        boxPlayer[1].style.backgroundColor = "";
+    }else{
+        boxPlayer[1].style.backgroundColor = "#353b48";
+        boxPlayer[0].style.backgroundColor = "";
+    }
+}
+
+boxPlayer[0].style.backgroundColor = "#353b48";
+
 document.getElementById("backMove").addEventListener("click", backMove)
 
 document.getElementById("name").addEventListener("click", selectNamePlayer);
@@ -119,6 +133,7 @@ const mark = (e) => {
             }
             containerPlayer.push(n);
             animation(n, i)
+            featuredPlayer()
             break;
         }
         
