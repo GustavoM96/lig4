@@ -3,6 +3,7 @@ let player=0;
 let count=5;
 //---Gustavo
 
+
 let board = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
