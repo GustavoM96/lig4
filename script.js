@@ -6,13 +6,13 @@ let count=5;
 
 
 let board = [
-    [0, 0, 0, 0, 0, 0, 1],
-    [0, 0, 0, 0, 0, 1, 0],
-    [0, 0, 0, 0, 1, 0, 0],
-    [0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0]
-];
+]
 
 // const setarNome =()=>{
 
@@ -118,7 +118,7 @@ document.getElementById("name").addEventListener("click", selectNamePlayer);
 //---Andre
 
 const mark = (e) => {
-    conditionWin(board);
+    
     let change = e.target.parentNode.children;
     if(e.target.classList[0] === "sectionColuns"){
         change = e.target.children;
@@ -151,7 +151,7 @@ const mark = (e) => {
         }
         
     }
-    
+    conditionWin(board);
     e.stopPropagation();
    
     
@@ -163,6 +163,7 @@ const conditionWin=(board)=>{
     const edgeY=board.length -3;
     const edgeX=board[0].length -3;
     
+    
     for(let i=0;i < board.length;i++){
         
         for(let j=0;j < edgeX;j++){
@@ -171,6 +172,7 @@ const conditionWin=(board)=>{
                     if(cell === board[i][j+1] && cell === board[i][j+2] && cell === board[i][j+3]){
                         status= true;
                         console.log(status);
+                        console.log(board);
                     }
                 }
             
@@ -180,24 +182,24 @@ const conditionWin=(board)=>{
     
     
   
-for(let i = 0; i < edgeY; i++){
+    for(let i = 0; i < edgeY; i++){
 
     
-    for(let j = 0; j < board[0].length; j++) {
-      cell = board[i][j];
-      
-     
-      if(cell !== 0) {
-        
-       
-        if(cell === board[i+1][j] && cell === board[i+2][j] && 
-            cell === board[i+3][j]) {
-           status=true;
-          console.log(status);
+        for(let j = 0; j < board[0].length; j++) {
+            cell = board[i][j];
+            
+            
+            if(cell !== 0) {
+                
+            
+                if(cell === board[i+1][j] && cell === board[i+2][j] && 
+                    cell === board[i+3][j]) {
+                status=true;
+                console.log(status);
+                }
+            }
         }
-      }
     }
-  }
   
     
     
@@ -210,7 +212,7 @@ for(let i = 0; i < edgeY; i++){
                 
     
                       if(cell !== 0){
-                            if (cell === board[i+1][j+1] && cell === board[i+2][j+2] && cell === board[i+3][j+3]) {
+                            if (cell === board[i+1][j+1] && cell === board[i+2][j+2] && cell === board[i+3][j+3]){
                                 status= true;
                                 console.log(status);
                             }
