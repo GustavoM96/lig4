@@ -42,22 +42,16 @@ const createMap = () => {
 }
 
 
-const animation = (change, color, k) => {
-    for (var i = 0; i <= k; i++) {
-      (function loop(i) {
-        setTimeout(function() {
-            change[i].style.backgroundColor = color;
-        }, 150*i)
-      })(i);
-
-      (function loop(i) {
-        setTimeout(function() {
-            change[i].style.backgroundColor="";
-        }, 220*i)
-      })(i);
-    }
-  }
-  
+const animation = (n, i) => {
+    n.animate([
+        // keyframes
+        { transform: `translateY(-${i*110}px)` },
+        { transform: 'translateY(0)' }
+      ], {
+        // timing options
+        duration: 600,
+      });
+}
 
 //---Andre
 
@@ -66,6 +60,7 @@ const mark = (e) => {
     if(e.target.classList[0] === "sectionColuns"){
         change = e.target.children;
     }
+
     for(let i=5; i >= 0; i--){
         let n = change[i];
         let numCol = n.parentNode.id[n.parentNode.id.length -1] 
@@ -73,25 +68,20 @@ const mark = (e) => {
 
         //Verificando se o n possui estilo
         if(n.style.backgroundColor === ""){
-            let color
-            if(player === 1 ){
-                color= "red"
-                player=2;
+
+            if(player === 0 ){
+                n.style.backgroundColor = "red";
+                player=1;
                 board[numLinha][numCol] = 2
                 
-            
-                 
             }else{
-                color = "black"
-                player=1;
+                n.style.backgroundColor = "black";
+                player=0; 
                 board[numLinha][numCol] = 1 
 
             }
-            animation(change,color, i);
-            setTimeout( timed = () => {
-                n.style.backgroundColor = color;
-            }, i * 220);
             
+            animation(n, i)
             break;
         }
         
