@@ -19,7 +19,7 @@ let count=5;
 const createMap = () => {
     for(let i = 0; i < 7; i++){
         const createColum = document.createElement("section");
-        createColum.id = `coluna${i+1}`;
+        createColum.id = `coluna${i}`;
         createColum.classList.add("sectionColuns")
         createColum.addEventListener('click', mark);
         for(let j = 0; j < 6; j++){
@@ -34,22 +34,16 @@ const createMap = () => {
 }
 
 
-const animation = (change, color, k) => {
-    for (var i = 0; i <= k; i++) {
-      (function loop(i) {
-        setTimeout(function() {
-            change[i].style.backgroundColor = color;
-        }, 150*i)
-      })(i);
-
-      (function loop(i) {
-        setTimeout(function() {
-            change[i].style.backgroundColor="";
-        }, 220*i)
-      })(i);
-    }
-  }
-  
+const animation = (n, i) => {
+    n.animate([
+        // keyframes
+        { transform: `translateY(-${i*110}px)` },
+        { transform: 'translateY(0)' }
+      ], {
+        // timing options
+        duration: 600,
+      });
+}
 
 //---Andre
 
@@ -58,23 +52,20 @@ const mark = (e) => {
     if(e.target.classList[0] === "sectionColuns"){
         change = e.target.children;
     }
+
     for(let i=5; i >= 0; i--){
         let n = change[i];
         //Verificando se o n possui estilo
         if(n.style.backgroundColor === ""){
-            let color
             if(player === 0 ){
-                 color= "red"
+                n.style.backgroundColor = "red";
                 player=1;
             }else{
-                color = "black"
+                n.style.backgroundColor = "black";
                 player=0; 
             }
-            animation(change,color, i);
-            setTimeout( timed = () => {
-                n.style.backgroundColor = color;
-            }, i * 220);
-            
+            n.classList.add("slide-top")
+            animation(n, i)
             break;
         }
         
