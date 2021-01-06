@@ -41,6 +41,7 @@ const createMap = () => {
     }
 }
 
+let containerPlayer = [];
 
 const animation = (n, i) => {
     n.animate([
@@ -71,6 +72,22 @@ const selectNamePlayer = () => {
 
 }
 
+const backMove = () => {
+    let item = containerPlayer[containerPlayer.length - 1];
+    item.style.backgroundColor = "";
+    let numCol = item.parentNode.id[item.parentNode.id.length -1] 
+    let numLinha = item.className[item.className.length -1]
+    containerPlayer.pop()
+    board[numLinha][numCol] = 0;
+    if(player === 0){
+        player = 1;
+    }else{
+        player = 0;
+    }
+}
+
+document.getElementById("backMove").addEventListener("click", backMove)
+
 document.getElementById("name").addEventListener("click", selectNamePlayer);
 
 //---Andre
@@ -100,7 +117,7 @@ const mark = (e) => {
                 board[numLinha][numCol] = 1 
 
             }
-            
+            containerPlayer.push(n);
             animation(n, i)
             break;
         }
