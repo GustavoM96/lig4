@@ -13,6 +13,11 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ];
 
+const setarNome =()=>{
+
+}
+const botaosetarNome = document.getElementById()
+
 
 const markPontos = ()=>{
     

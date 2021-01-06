@@ -5,6 +5,7 @@
     --secundy-white: #dcdde1 ;
     --primary-shadow: #353b48;
     --primary-black: #2f3640;
+    --primary-button-go: #35DE4A;
 }
 
 main{
@@ -62,6 +63,20 @@ div.placar{
     margin: 0 auto;
 }
 
+
+
+
+div#modal{
+    border: 5px solid rgb(128, 28, 28);
+    background-color: white;
+    width: 300px;
+    height: 150px;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
 h1{
     color: var(--primary-white);
     font-size: 3rem;
@@ -117,6 +132,10 @@ button{
     margin: 5px;
     padding: 5px;
     font-size: 1rem;
+}
+button#escolhaPlayer{
+    background-color: var(--primary-button-go) ;
+    border: 2px solid black;
 }
 
 
