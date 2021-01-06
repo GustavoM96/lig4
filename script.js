@@ -1,6 +1,7 @@
 let b = 8
 let player=1;
 let count=5;
+
 //---Gustavo
 
 let board = [
@@ -28,15 +29,18 @@ const createMap = () => {
         const createColum = document.createElement("section");
         createColum.id = `coluna${i}`;
         createColum.classList.add("sectionColuns")
+
         createColum.addEventListener('click', mark);
+
         for(let j = 0; j < 6; j++){
+        
+            
             const createCell = document.createElement("div");
             createCell.classList.add(`cel${j}`)
             createColum.appendChild(createCell)
             createColum.addEventListener('click', mark);
-            
-
         }
+      
         document.querySelector("main").appendChild(createColum)
         
     }
@@ -112,6 +116,7 @@ const mark = (e) => {
         change = e.target.children;
     }
 
+
     for(let i=5; i >= 0; i--){
         let n = change[i];
         let numCol = n.parentNode.id[n.parentNode.id.length -1] 
@@ -138,20 +143,91 @@ const mark = (e) => {
         }
         
     }
-    e.stopPropagation()
+    
+    e.stopPropagation();
+    conditionWin(board);
 }
 
-createMap();
+createMap()
 
 
-
-let button = document.getElementById('botao')
-    button.addEventListener('click', botao)
-
-    function botao() {
-       let selecionaCelula = document.querySelectorAll('.sectionColuns div')
-       player = 0
-        for(let i = 0; i < selecionaCelula.length; i++){
-            selecionaCelula[i].style.backgroundColor = ''
+const conditionWin=(board)=>{
+    let status=false;    
+    const edgeY=board[0].length -3;
+    const edgeX=board[0].length -3;
+    
+    for(let i=0;i < board.length;i++){
+        
+        for(let j=0;j < edgeX;j++){
+                let cell = board[i][j];
+                if(cell !== 0){
+                    if(cell === board[i][j+1] && cell === board[i][j+2] && cell === board[i][j+3]){
+                        status= true;
+                        console.log(status);
+                    }
+                }
+            
         }
     }
+    
+    
+    
+    for(let i=0;i < edgeY;i++){
+        
+        for(let j=0;j <board.length;j++){
+    
+            let cell = board[i][j];
+    
+                if(cell !== 0){
+    
+                    if(cell === board[i+1][j] && cell === board[i+2][j] && cell === board[i+3][j]){
+                        status= true;
+                        console.log(status);
+                }
+            }
+            
+        }
+    }
+    
+    
+    
+    
+    for (let i = 0; i < edgeY; i++) {
+    
+            for(let j = 0; j < edgeX; j++) {
+    
+                cell = board[i][j];
+    
+                      if(cell !== 0){
+                            if (cell === board[i+1][j+1] && cell === board[i+2][j+2] && cell === board[i+3][j+3]) {
+                                status= true;
+                                console.log(status);
+                            }
+                    }
+            }
+    }
+    
+    
+    
+    for (let i = 2; i < board.length; i++) {
+    
+        for (let j = 0; j < edgeX; j++) {
+            cell = board[i][j];
+     
+            if (cell !== 0) {
+     
+                
+                if(cell === board[i-1][j+1] && cell === board[i-2][j+2] && cell === cell === board[i-2][j+3]){
+                    status= true;
+                    console.log(status);
+                }
+            }
+        }
+     }
+    
+    return status;
+
+    }
+    
+    
+    

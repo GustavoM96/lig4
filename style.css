@@ -1,10 +1,11 @@
 /* Jardel */
 :root{
+
     --primary-main: #2f3542;
     --primary-white: #f5f6fa;
     --secundy-white: #ced6e0 ;
     --primary-shadow: #353b48;
-    --primary-black: #2f3640;
+    --primary-black: #8cb4ec;
 }
 
 main{
