@@ -28,11 +28,9 @@ const createMap = () => {
         const createColum = document.createElement("section");
         createColum.id = `coluna${i}`;
         createColum.classList.add("sectionColuns")
-<<<<<<< HEAD
 
-=======
         createColum.addEventListener('click', mark);
->>>>>>> master
+
         for(let j = 0; j < 6; j++){
         
             
@@ -111,7 +109,91 @@ const mark = (e) => {
         }
         
     }
+    
     e.stopPropagation();
+    conditionWin(board);
 }
 
 createMap()
+
+
+const conditionWin=(board)=>{
+    let status=false;    
+    const edgeY=board[0].length -3;
+    const edgeX=board[0].length -3;
+    
+    for(let i=0;i < board.length;i++){
+        
+        for(let j=0;j < edgeX;j++){
+                let cell = board[i][j];
+                if(cell !== 0){
+                    if(cell === board[i][j+1] && cell === board[i][j+2] && cell === board[i][j+3]){
+                        status= true;
+                        console.log(status);
+                    }
+                }
+            
+        }
+    }
+    
+    
+    
+    for(let i=0;i < edgeY;i++){
+        
+        for(let j=0;j <board.length;j++){
+    
+            let cell = board[i][j];
+    
+                if(cell !== 0){
+    
+                    if(cell === board[i+1][j] && cell === board[i+2][j] && cell === board[i+3][j]){
+                        status= true;
+                        console.log(status);
+                }
+            }
+            
+        }
+    }
+    
+    
+    
+    
+    for (let i = 0; i < edgeY; i++) {
+    
+            for(let j = 0; j < edgeX; j++) {
+    
+                cell = board[i][j];
+    
+                      if(cell !== 0){
+                            if (cell === board[i+1][j+1] && cell === board[i+2][j+2] && cell === board[i+3][j+3]) {
+                                status= true;
+                                console.log(status);
+                            }
+                    }
+            }
+    }
+    
+    
+    
+    for (let i = 2; i < board.length; i++) {
+    
+        for (let j = 0; j < edgeX; j++) {
+            cell = board[i][j];
+     
+            if (cell !== 0) {
+     
+                
+                if(cell === board[i-1][j+1] && cell === board[i-2][j+2] && cell === cell === board[i-2][j+3]){
+                    status= true;
+                    console.log(status);
+                }
+            }
+        }
+     }
+    
+    return status;
+
+    }
+    
+    
+    
