@@ -4,6 +4,7 @@ const placarVermelho = document.getElementById("pontoVermelho");
 const boxPlayer = document.querySelectorAll("#players figure");
 const modalNames = document.getElementById("modal");
 const modalResult = document.getElementById("modalResultGame");
+const modalResult1 = document.getElementById("modalBotao")
 const locationForName = document.querySelectorAll("figure figcaption p");
 const winnerName = document.querySelector("#modalResultGame h1");
 
@@ -25,8 +26,6 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0]
 ]
-
-
 
 boxPlayer[1].style.backgroundColor = "#353b48";
 
@@ -78,6 +77,15 @@ const animation = (n, i) => {
       });
 }
 
+const animationModais = (item) => {
+    item.animate([
+        { transform: "scale(0)"},
+        { transform: "scale(1)"}
+      ], {
+        duration: 500,
+      });
+}
+
 const limparMapa = () =>{
     let selecionaCelula = document.querySelectorAll('.sectionColuns div')
     
@@ -119,3 +127,5 @@ document.getElementById("escolhaPlayer").addEventListener("click", showModalName
 document.querySelector("#modalResultGame button").addEventListener("click", showModalResultGame)
 
 
+// desabilitar os botoes quando um player vencer, só habilitando-os novamente quando o botao OK
+// for clicado
