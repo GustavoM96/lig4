@@ -90,7 +90,6 @@ const animation = (n, i) => {
 
 const limparMapa = ()=>{
     let selecionaCelula = document.querySelectorAll('.sectionColuns div')
-    player = 0
     for(let i = 0; i < selecionaCelula.length; i++){
         selecionaCelula[i].style.backgroundColor = ''
     }
