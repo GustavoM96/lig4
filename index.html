@@ -57,25 +57,26 @@
     </section>
 
     <div id="modal" class="hidden">
-
-        <div>
-            <label for="user1">Player1 :</label>
-            <input type="text" id="user1" placeholder="Digite o nome do Player1"  > 
+        <div class="primaryDiv">
+            <div>
+                <label for="user1">Player1 :</label>
+                <input type="text" id="user1" placeholder="Digite o nome do Player1"  > 
+                
+            </div>
             
+            <div>
+                <label for="user2">Player2 :</label>
+                <input type="text" id="user2" placeholder="Digite o nome do Player2" >
+            </div>
+    
+            <button id="escolhaPlayer">GO!</button>
         </div>
-        
-        <div>
-            <label for="user2">Player2 :</label>
-            <input type="text" id="user2" placeholder="Digite o nome do Player2" >
-        </div>
-
-        
-
-        <button id="escolhaPlayer">GO!</button>
     </div>
 
-    <div id="modalResultGame" class="hidden">
-        <h1>O vencedor é Player: 1</h1>
+
+    <div id="modalResultGame" class="hidden modalResultGame">
+        <div>
+            <h1>O vencedor é Player: 1</h1>
 
             <button>OK</button>
         </div>

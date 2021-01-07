@@ -60,7 +60,7 @@ const conditionWin = (board) => {
     if(conditionWinDiagonalLeft(status, edgeX, edgeY))status = true;
 
     if(status) containerPlayer = [];
-    
+
     return status;
 }
 
