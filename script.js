@@ -153,7 +153,7 @@ const mark = (e) => {
     }
     conditionWin(board);
     e.stopPropagation();
-   
+    conditionWin(board);
     
 }
 
