@@ -37,7 +37,7 @@ const empate = ()=>{
 }
 
 
-boxPlayer[0].style.backgroundColor = "#353b48";
+boxPlayer[1].style.backgroundColor = "#353b48";
 
 const createDisk = (e) => {
     contador++;
@@ -90,7 +90,7 @@ const animation = (n, i) => {
 
 const limparMapa = ()=>{
     let selecionaCelula = document.querySelectorAll('.sectionColuns div')
-    player = 0
+    
     for(let i = 0; i < selecionaCelula.length; i++){
         selecionaCelula[i].style.backgroundColor = ''
     }
