@@ -26,6 +26,8 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ]
 
+
+
 boxPlayer[1].style.backgroundColor = "#353b48";
 
 const createDisk = (e) => {
@@ -78,6 +80,7 @@ const animation = (n, i) => {
 
 const limparMapa = () =>{
     let selecionaCelula = document.querySelectorAll('.sectionColuns div')
+    
     for(let i = 0; i < selecionaCelula.length; i++){
         selecionaCelula[i].style.backgroundColor = ''
     }
