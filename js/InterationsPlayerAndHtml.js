@@ -41,8 +41,10 @@ const backMove = () => {
     board[numLinha][numCol] = 0;
     if(player === 0){
         player = 1;
+        featuredPlayer()
     }else{
         player = 0;
+        featuredPlayer()
     }
 }
 
