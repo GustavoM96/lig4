@@ -1,12 +1,18 @@
+/*Constantes Globais */
+const placarPreto = document.getElementById("pontoPreto");
+const placarVermelho = document.getElementById("pontoVermelho");
+const boxPlayer = document.querySelectorAll("#players figure");
+const modalNames = document.getElementById("modal");
+const locationForName = document.querySelectorAll("figure figcaption p");
+
+/*Variaveis Globais */
 let b = 8
 let player=1;
 let count=5;
-let pontosVermelho = 0
-let pontosPreto = 0
-let contador = 0
-//---Gustavo
-
-
+let pontosVermelho = 0;
+let pontosPreto = 0;
+let contador = 0;
+let containerPlayer = [];
 let board = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -16,13 +22,24 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ]
 
+const empate = ()=>{
 
-const placarPreto = document.getElementById("pontoPreto")
-const placarVermelho = document.getElementById("pontoVermelho")
+    if(!conditionWin(board)){
+        for(let i = 0 ; i < board[0].length;i++){
+
+            if(board[0][i] === 0){
+                return false
+            }
+        }
+        return true
+    }
+    return false
+}
+
+
+boxPlayer[0].style.backgroundColor = "#353b48";
 
 const markPontos = ()=>{
-    
-
     if(conditionWin(board)){
         if(player === 0){
             pontosPreto++
@@ -38,12 +55,7 @@ const markPontos = ()=>{
     }
 }
 
-
-
-
-//---Jardel
-
-const boxPlayer = document.querySelectorAll("#players figure")
+const showModalNamePlayer = () => modalNames.classList.toggle("hidden");
 
 const createMap = () => {
     for(let i = 0; i < 7; i++){
@@ -67,8 +79,6 @@ const createMap = () => {
     }
 }
 
-let containerPlayer = [];
-
 const animation = (n, i) => {
     n.animate([
         // keyframes
@@ -81,9 +91,8 @@ const animation = (n, i) => {
 }
 
 const selectNamePlayer = () => {
-    const locationForName = document.querySelectorAll("figure figcaption p");
-    let playerName1 = window.prompt("Nome do Jogador Preto:");
-    let playerName2 = window.prompt("Nome do Jogador Vermelho:");
+    let playerName1 = document.getElementById("user1").value;
+    let playerName2 = document.getElementById("user2").value;
 
     if(playerName1 == ""){
         playerName1 = "Player1";
@@ -95,6 +104,9 @@ const selectNamePlayer = () => {
 
     locationForName[0].innerHTML = playerName1;
     locationForName[1].innerHTML = playerName2;
+
+    document.getElementById("user1").value = "";
+    document.getElementById("user2").value = "";
 
 }
 
@@ -122,14 +134,6 @@ const featuredPlayer = () => {
         boxPlayer[0].style.backgroundColor = "";
     }
 }
-
-boxPlayer[0].style.backgroundColor = "#353b48";
-
-document.getElementById("backMove").addEventListener("click", backMove)
-
-document.getElementById("name").addEventListener("click", selectNamePlayer);
-
-//---Andre
 
 const mark = (e) => {
     
@@ -176,12 +180,7 @@ const mark = (e) => {
        if(contador === 42){
             condicaoDeEmpate();
         }
-   }
-    
-    
-    
-
-
+}    
 
 const conditionWin=(board)=>{
     let statusVitoria=false;    
@@ -196,8 +195,7 @@ const conditionWin=(board)=>{
                 if(cell !== 0){
                     if(cell === board[i][j+1] && cell === board[i][j+2] && cell === board[i][j+3]){
                         statusVitoria= true;
-                        console.log(statusVitoria);
-                        console.log("vitoria");
+                        
                     }
                 }
             
@@ -220,8 +218,7 @@ const conditionWin=(board)=>{
                 if(cell === board[i+1][j] && cell === board[i+2][j] && 
                     cell === board[i+3][j]) {
                 statusVitoria=true;
-                console.log(statusVitoria);
-                console.log("vitoria");
+                
                 }
             }
         }
@@ -240,8 +237,7 @@ const conditionWin=(board)=>{
                       if(cell !== 0){
                             if (cell === board[i+1][j+1] && cell === board[i+2][j+2] && cell === board[i+3][j+3]){
                                 statusVitoria= true;
-                                console.log(statusVitoria);
-                                console.log("vitoria");
+                                
                             }
                     }
             }
@@ -257,8 +253,7 @@ const conditionWin=(board)=>{
                      
                 if(cell === board[i-1][j+1] && cell === board[i-2][j+2] && cell === board[i-3][j+3]){
                     statusVitoria= true;
-                    console.log(statusVitoria);
-                    console.log("vitoria");
+                    
                 }
 
             }
@@ -266,62 +261,44 @@ const conditionWin=(board)=>{
         } 
     return statusVitoria;
 
-    }
-
-    //---Caio
-
-//--função botão reload
-
-    createMap();
-
-
-    let button = document.getElementById('botao')
-    button.addEventListener('click', resetar)
-
-
-    const limparMapa = ()=>{
-        let selecionaCelula = document.querySelectorAll('.sectionColuns div')
-       player = 0
-        for(let i = 0; i < selecionaCelula.length; i++){
-            selecionaCelula[i].style.backgroundColor = ''
-        }
-        board = [
-            [0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0]
-        ]
-    }
-
-    function resetar() {
-       limparMapa()
-        pontosVermelho =0
-
-        pontosPreto = 0
-        
-        placarPreto.innerHTML = `${pontosPreto}`
-        placarVermelho.innerHTML = `${pontosVermelho}`
-
-    }
-
-
-//--condição de empate
-
-    //--função callback para ser usada no método every
-    function percorreArrayBoard(element) {
-         return element !== 0
 }
 
-    function condicaoDeEmpate() {
-       if(board.every(percorreArrayBoard)){
-           alert('empate')
-       }
+const limparMapa = ()=>{
+    let selecionaCelula = document.querySelectorAll('.sectionColuns div')
+    player = 0
+    for(let i = 0; i < selecionaCelula.length; i++){
+        selecionaCelula[i].style.backgroundColor = ''
     }
+    board = [
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0]
+    ]
+}
 
-   
+const resetar = () => {
+    limparMapa()
+    pontosVermelho =0
+    pontosPreto = 0
+    
+    placarPreto.innerHTML = `${pontosPreto}`
+    placarVermelho.innerHTML = `${pontosVermelho}`
+}
 
 
-    // 1 - condição de vitória falsa 
-    // e se todos os elementos do array board forem diferentes de 0
+
+createMap();
+
+document.getElementById("backMove").addEventListener("click", backMove)
+
+document.getElementById("name").addEventListener("click", showModalNamePlayer)
+
+document.getElementById('botao').addEventListener('click', resetar)
+
+document.getElementById("escolhaPlayer").addEventListener("click", selectNamePlayer)
+document.getElementById("escolhaPlayer").addEventListener("click", showModalNamePlayer)
+
+
