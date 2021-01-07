@@ -18,7 +18,7 @@ const createMap = () => {
     }
 }
 
-const pontuar = ()=>{
+const pontuar = () => {
     if(conditionWin(board)){
         if(player === 0){
             pontosPreto++
@@ -29,6 +29,8 @@ const pontuar = ()=>{
             placarVermelho.innerText = `${pontosVermelho}`
             limparMapa()
         }
+        showModalResultGame()
+        
     }
 }
 
@@ -49,16 +51,8 @@ const backMove = () => {
 }
 
 const selectNamePlayer = () => {
-    let playerName1 = document.getElementById("user1").value;
-    let playerName2 = document.getElementById("user2").value;
-
-    if(playerName1 == ""){
-        playerName1 = "Player1";
-    }
-
-    if(playerName2 ==  ""){
-        playerName2 = "Player2";
-    }
+    playerName1 = document.getElementById("user1").value;
+    playerName2 = document.getElementById("user2").value;
 
     locationForName[0].innerHTML = playerName1;
     locationForName[1].innerHTML = playerName2;
@@ -68,19 +62,9 @@ const selectNamePlayer = () => {
 
 }
 
-const featuredPlayer = () => {
-    if(player === 0){
-        boxPlayer[0].style.backgroundColor = "#353b48";
-        boxPlayer[1].style.backgroundColor = "";
-    }else{
-        boxPlayer[1].style.backgroundColor = "#353b48";
-        boxPlayer[0].style.backgroundColor = "";
-    }
-}
-
 const resetar = () => {
     limparMapa()
-    pontosVermelho =0
+    pontosVermelho = 0
     pontosPreto = 0
     
     placarPreto.innerHTML = `${pontosPreto}`
@@ -88,3 +72,17 @@ const resetar = () => {
 }
 
 const showModalNamePlayer = () => modalNames.classList.toggle("hidden");
+
+const showModalResultGame = () => {
+    modalResult.classList.toggle("hidden");
+    if(empate()){
+        winnerName.innerText = "Deu empate, vamos jogar novamente";
+    }else{
+        if(player === 0){
+            winnerName.innerText = "O vencedor é: " + playerName1;
+        }else{
+            winnerName.innerText = "O vencedor é: " + playerName2;
+        }
+    }
+    
+}

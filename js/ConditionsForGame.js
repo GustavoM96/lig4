@@ -46,7 +46,7 @@ const conditionWinDiagonalLeft = (status, edgeX, edgeY) => {
     return status; 
 }
 
-const conditionWin=(board)=>{
+const conditionWin = (board) => {
     let status=false;    
     const edgeY=board.length -3;
     const edgeX=board[0].length -3;
@@ -58,7 +58,20 @@ const conditionWin=(board)=>{
     if(conditionWinDiagonalRigth(status, edgeX, edgeY))status = true;
     
     if(conditionWinDiagonalLeft(status, edgeX, edgeY))status = true;
-    
+
+    if(status) containerPlayer = [];
     return status;
 
+}
+
+const empate = () => {
+    if(!conditionWin(board)){
+        for(let i = 0 ; i < board[0].length;i++){
+            if(board[0][i] === 0){
+                return false
+            }
+        }
+        return true
+    }
+    return false
 }
