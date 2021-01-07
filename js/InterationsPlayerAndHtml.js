@@ -22,12 +22,11 @@ const pontuar = () => {
         if(player === 0){
             pontosPreto++
             placarPreto.innerHTML = `${pontosPreto}`
-            limparMapa()
         }else{
             pontosVermelho++
             placarVermelho.innerText = `${pontosVermelho}`
-            limparMapa()
         }
+        limparMapa()
     }
 }
 
