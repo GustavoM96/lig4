@@ -44,13 +44,16 @@ const createDisk = (e) => {
         if(n.style.backgroundColor === ""){
             if(player === 0 ){
                 n.style.backgroundColor = "red";
+                
+                
                 player=1;
                 board[numLinha][numCol] = 2
                 
             }else{
                 n.style.backgroundColor = "black";
                 player=0; 
-                board[numLinha][numCol] = 1 
+                board[numLinha][numCol] = 1
+                
 
             }
 

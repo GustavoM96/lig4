@@ -52,6 +52,12 @@ section#players{
     display: flex;
     justify-content: space-around;
 }
+div#cells{
+    background-image: url("/skull-coin1.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 h1#high{
     text-align: right;
@@ -140,6 +146,7 @@ button{
     margin: 5px;
     padding: 5px;
     font-size: 1rem;
+   
 }
 
 button#escolhaPlayer{
@@ -158,8 +165,8 @@ button#escolhaPlayer:hover{
 #modalResultGame{
    display:flex;
    flex-direction: row;
-   flex-wrap:war
-    width:600px;
+   flex-wrap: wrap;
+    width: 600px;
     border: solid 1px rgb(255, 0, 0);
 }
 
