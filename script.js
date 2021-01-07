@@ -129,7 +129,7 @@ document.getElementById("name").addEventListener("click", selectNamePlayer);
 //---Andre
 
 const mark = (e) => {
-    
+    console.log(status);
     let change = e.target.parentNode.children;
     if(e.target.classList[0] === "sectionColuns"){
         change = e.target.children;
