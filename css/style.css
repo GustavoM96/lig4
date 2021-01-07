@@ -64,20 +64,19 @@ div.placar{
 }
 
 div#modal{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 300px;
+    width: 90%;
     height: 200px;
     background-color: rgba(77, 45, 45, 0.794);
     text-align: center;
     padding: 20px;
     border-radius: 5px;
-    justify-content: center;
+    box-shadow: 0 0 15px var(--primary-black);
 }
 
 input{
-    padding:7px 40px 7px 40px;
+    padding:7px;
+    width: 80%;
+    text-align: center;
 }
 
 h1{
@@ -151,7 +150,6 @@ button#escolhaPlayer{
 
 button#escolhaPlayer:hover{
     background-color: rgba(243, 25, 25, 0.966);
-
 }
 
 
@@ -208,6 +206,14 @@ button#escolhaPlayer:hover{
         width: 80px;
         height: 80px;
     }
+
+
+    div#modal{
+        width: 400px;
+        height: 200px;
+        margin: 0 auto;
+}
+
 }
 
 @media (min-width: 900px){
