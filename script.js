@@ -1,7 +1,8 @@
 let b = 8
 let player=1;
 let count=5;
-
+let pontosVermelho = 0
+let pontosPreto = 0
 //---Gustavo
 
 
@@ -14,15 +15,25 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ]
 
-// const setarNome =()=>{
 
-// }
-// const botaosetarNome = document.getElementById()
+const placarPreto = document.getElementById("pontoPreto")
+const placarVermelho = document.getElementById("pontoVermelho")
 
-
-// const markPontos = ()=>{
+const markPontos = ()=>{
     
-// }
+
+    if(conditionWin(board)){
+        if(player === 0){
+            pontosPreto++
+            placarPreto.innerHTML = `${pontosPreto}`
+            console.log(pontosVermelho, pontosPreto);
+        }else{
+            pontosVermelho++
+            placarVermelho.innerText = `${pontosVermelho}`
+        }
+
+    }
+}
 
 
 
@@ -100,7 +111,7 @@ const backMove = () => {
 
 const featuredPlayer = () => {
     
-    if(player === 1){
+    if(player === 0){
         boxPlayer[0].style.backgroundColor = "#353b48";
         boxPlayer[1].style.backgroundColor = "";
     }else{
@@ -152,6 +163,7 @@ const mark = (e) => {
         
     }
     conditionWin(board);
+    markPontos()
     e.stopPropagation();
    
     
@@ -159,7 +171,7 @@ const mark = (e) => {
 
 
 const conditionWin=(board)=>{
-    let status=false;    
+    let statusVitoria=false;    
     const edgeY=board.length -3;
     const edgeX=board[0].length -3;
     
@@ -170,9 +182,9 @@ const conditionWin=(board)=>{
                 let cell = board[i][j];
                 if(cell !== 0){
                     if(cell === board[i][j+1] && cell === board[i][j+2] && cell === board[i][j+3]){
-                        status= true;
-                        console.log(status);
-                        console.log(board);
+                        statusVitoria= true;
+                        console.log(statusVitoria);
+                        console.log("vitoria");
                     }
                 }
             
@@ -194,8 +206,9 @@ const conditionWin=(board)=>{
             
                 if(cell === board[i+1][j] && cell === board[i+2][j] && 
                     cell === board[i+3][j]) {
-                status=true;
-                console.log(status);
+                statusVitoria=true;
+                console.log(statusVitoria);
+                console.log("vitoria");
                 }
             }
         }
@@ -213,8 +226,9 @@ const conditionWin=(board)=>{
     
                       if(cell !== 0){
                             if (cell === board[i+1][j+1] && cell === board[i+2][j+2] && cell === board[i+3][j+3]){
-                                status= true;
-                                console.log(status);
+                                statusVitoria= true;
+                                console.log(statusVitoria);
+                                console.log("vitoria");
                             }
                     }
             }
@@ -229,14 +243,15 @@ const conditionWin=(board)=>{
             if (cell !== 0) {
                      
                 if(cell === board[i-1][j+1] && cell === board[i-2][j+2] && cell === board[i-3][j+3]){
-                    status= true;
-                    console.log(status);
+                    statusVitoria= true;
+                    console.log(statusVitoria);
+                    console.log("vitoria");
                 }
 
             }
           }
         } 
-    return status;
+    return statusVitoria;
 
     }
 
@@ -244,6 +259,8 @@ const conditionWin=(board)=>{
 
 
     createMap();
+
+
     let button = document.getElementById('botao')
     button.addEventListener('click', botao)
 
@@ -253,6 +270,21 @@ const conditionWin=(board)=>{
         for(let i = 0; i < selecionaCelula.length; i++){
             selecionaCelula[i].style.backgroundColor = ''
         }
+        board = [
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0]
+        ]
+        pontosVermelho =0
+
+        pontosPreto = 0
+        
+        placarPreto.innerHTML = `${pontosPreto}`
+        placarVermelho.innerHTML = `${pontosVermelho}`
+
     }
 
 
