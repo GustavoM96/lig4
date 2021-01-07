@@ -22,14 +22,11 @@ const pontuar = () => {
         if(player === 0){
             pontosPreto++
             placarPreto.innerHTML = `${pontosPreto}`
-            limparMapa()
         }else{
             pontosVermelho++
             placarVermelho.innerText = `${pontosVermelho}`
-            limparMapa()
         }
-        showModalResultGame()
-        
+        limparMapa()
     }
 }
 
@@ -68,26 +65,43 @@ const resetar = () => {
     limparMapa()
     pontosVermelho = 0
     pontosPreto = 0
-    
+    player = 1;
+    featuredPlayer()
     placarPreto.innerHTML = `${pontosPreto}`
     placarVermelho.innerHTML = `${pontosVermelho}`
 }
 
 const showModalNamePlayer = () => {
-    modalNames.classList.toggle("hidden");
+    if(modalNames.classList.contains("hidden")){
+        modalNames.classList.remove("hidden");
+        modalNames.classList.add("show");
+    }else{
+        modalNames.classList.remove("show");
+        modalNames.classList.add("hidden");
+    }
     animationModais(modalNames);
 }
 
 const showModalResultGame = () => {
-    modalResult.classList.toggle("hidden");
+    console.log("ENTREI")
     if(empate()){
         winnerName.innerText = "Deu empate, vamos jogar novamente";
+        console.log("entrei no empate")
     }else{
         if(player === 0){
             winnerName.innerText = "O vencedor é: " + playerName1;
         }else{
             winnerName.innerText = "O vencedor é: " + playerName2;
         }
+        console.log("entrei no ganhar")
+    }
+
+    if(modalResult.classList.contains("hidden")){
+        modalResult.classList.remove("hidden");
+        modalResult.classList.add("show");
+    }else{
+        modalResult.classList.remove("show");
+        modalResult.classList.add("hidden");
     }
 
     animationModais(modalResult)
