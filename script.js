@@ -3,6 +3,7 @@ let player=1;
 let count=5;
 let pontosVermelho = 0
 let pontosPreto = 0
+let contador = 0
 //---Gustavo
 
 
@@ -131,9 +132,14 @@ document.getElementById("name").addEventListener("click", selectNamePlayer);
 //---Andre
 
 const mark = (e) => {
+   
     
-    contador++;
-    console.log(contador)
+
+    // -- resolução --
+    // -- é necessário fazer com o que o contador SÓ seja executado
+    // -- se a célula CLICADA estiver vazia
+    // -- É necessário capturar a última div disponível da coluna
+    // -- se na primeira
 
     let change = e.target.parentNode.children;
     if(e.target.classList[0] === "sectionColuns"){
@@ -322,5 +328,6 @@ const conditionWin=(board)=>{
    
 
 
-    // 1 - condição de vitória falsa 
-    // e se todos os elementos do array board forem diferentes de 0
+    //--Resolução de bug
+    // 1 - fazer com que o contador só chegue a 42
+    // 2 - fazer com que o contador só seja executado quando clicado em célula vazia
