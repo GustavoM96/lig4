@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="reset.css" type="text/css">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>lig4</title>
+    <link rel="sortcut icon" href="imagens/board-game.svg" type="imagens/svg"/>
 </head>
 <body>
         <section id="players">
@@ -46,7 +47,7 @@
         <div class="bts">
 
             <button id="name">Escolher Nome</button>
-            <button id="botao">Jogar Novamente</button>
+            <button id="botao">Zerar Placar</button>
             <button id="backMove">Voltar Jogada</button>
 
         </div>
@@ -54,7 +55,7 @@
 
     </section>
 
-    <div id="modal">
+    <div id="modal" class="hidden">
         <div>
             <label for="user1">Player1 :</label>
             <input type="text" id="user1" placeholder="Digite o nome do Player1"  > 
@@ -70,10 +71,15 @@
 
         <button id="escolhaPlayer">GO!</button>
     </div>
+
+    <div id="modalResultGame" class="hidden">
+        <h1></h1>
+
+        <button>OK</button>
+    </div>
     
-
-
-
-    <script src="script.js"></script>
+    <script src="js/InterationsPlayerAndHtml.js"></script>
+    <script src="js/ConditionsForGame.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
