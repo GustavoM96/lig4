@@ -135,7 +135,6 @@ button{
 button#escolhaPlayer{
     background-color: green;
     border: 3px solid white;
-    
     margin: 0 auto;
 }
 
@@ -184,4 +183,12 @@ button#escolhaPlayer{
         padding: 5px;
         
     }
+}
+
+.show{
+    display: block;
+}
+
+.hidden{
+    display: none;
 }
