@@ -77,6 +77,11 @@ div#modal{
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 15px var(--primary-black);
+    background-image: url("/skull-coin.svg");
+    background-size: 50%;
+    /* background-repeat: no-repeat; */
+    background-position: center;
+  
 }
 
 input{
@@ -170,6 +175,8 @@ button#escolhaPlayer:hover{
     border: solid 1px rgba(255, 0, 0, 0.26);
     justify-content: center;
     align-content: center;
+    
+    
 }
 
 #modalResultGame button{
@@ -185,7 +192,7 @@ button#escolhaPlayer:hover{
     
     background-color: rgba(151, 17, 17, 0.8);
     border:1px solid rgba(255, 255, 255, 0.9);
-  
+    
    
     
     
