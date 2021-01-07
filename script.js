@@ -132,6 +132,9 @@ document.getElementById("name").addEventListener("click", selectNamePlayer);
 
 const mark = (e) => {
     
+    contador++;
+    console.log(contador)
+
     let change = e.target.parentNode.children;
     if(e.target.classList[0] === "sectionColuns"){
         change = e.target.children;
@@ -169,7 +172,14 @@ const mark = (e) => {
     e.stopPropagation();
     conditionWin(board);
     
-}
+       if(contador === 42){
+            condicaoDeEmpate();
+        }
+   }
+    
+    
+    
+
 
 
 const conditionWin=(board)=>{
@@ -259,6 +269,7 @@ const conditionWin=(board)=>{
 
     //---Caio
 
+//--função botão reload
 
     createMap();
 
@@ -295,5 +306,21 @@ const conditionWin=(board)=>{
     }
 
 
-    
-    
+//--condição de empate
+
+    //--função callback para ser usada no método every
+    function percorreArrayBoard(element) {
+         return element !== 0
+}
+
+    function condicaoDeEmpate() {
+       if(board.every(percorreArrayBoard)){
+           alert('empate')
+       }
+    }
+
+   
+
+
+    // 1 - condição de vitória falsa 
+    // e se todos os elementos do array board forem diferentes de 0
