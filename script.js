@@ -27,9 +27,11 @@ const markPontos = ()=>{
             pontosPreto++
             placarPreto.innerHTML = `${pontosPreto}`
             console.log(pontosVermelho, pontosPreto);
+            limparMapa()
         }else{
             pontosVermelho++
             placarVermelho.innerText = `${pontosVermelho}`
+            limparMapa()
         }
 
     }
@@ -262,10 +264,11 @@ const conditionWin=(board)=>{
 
 
     let button = document.getElementById('botao')
-    button.addEventListener('click', botao)
+    button.addEventListener('click', resetar)
 
-    function botao() {
-       let selecionaCelula = document.querySelectorAll('.sectionColuns div')
+
+    const limparMapa = ()=>{
+        let selecionaCelula = document.querySelectorAll('.sectionColuns div')
        player = 0
         for(let i = 0; i < selecionaCelula.length; i++){
             selecionaCelula[i].style.backgroundColor = ''
@@ -278,6 +281,10 @@ const conditionWin=(board)=>{
             [0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0]
         ]
+    }
+
+    function resetar() {
+       limparMapa()
         pontosVermelho =0
 
         pontosPreto = 0
