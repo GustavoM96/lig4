@@ -6,8 +6,6 @@ const createMap = () => {
         createColum.addEventListener('click', createDisk);
 
         for(let j = 0; j < 6; j++){
-        
-            
             const createCell = document.createElement("div");
             createCell.classList.add(`cel${j}`)
             createColum.appendChild(createCell)
@@ -54,6 +52,9 @@ const selectNamePlayer = () => {
     playerName1 = document.getElementById("user1").value;
     playerName2 = document.getElementById("user2").value;
 
+    if(playerName1 == "") playerName1 = "Player1";
+    if(playerName2 == "") playerName2 = "Player2";
+    
     locationForName[0].innerHTML = playerName1;
     locationForName[1].innerHTML = playerName2;
 
@@ -71,7 +72,10 @@ const resetar = () => {
     placarVermelho.innerHTML = `${pontosVermelho}`
 }
 
-const showModalNamePlayer = () => modalNames.classList.toggle("hidden");
+const showModalNamePlayer = () => {
+    modalNames.classList.toggle("hidden");
+    animationModais(modalNames);
+}
 
 const showModalResultGame = () => {
     modalResult.classList.toggle("hidden");
@@ -84,5 +88,7 @@ const showModalResultGame = () => {
             winnerName.innerText = "O vencedor é: " + playerName2;
         }
     }
+
+    animationModais(modalResult)
     
 }
