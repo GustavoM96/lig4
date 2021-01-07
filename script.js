@@ -23,7 +23,7 @@ const markPontos = ()=>{
     
 
     if(conditionWin(board)){
-        if(player === 0){
+        if(player === 2){
             pontosPreto++
             placarPreto.innerHTML = `${pontosPreto}`
             console.log(pontosVermelho, pontosPreto);
@@ -145,12 +145,12 @@ const mark = (e) => {
         if(n.style.backgroundColor === ""){
 
             if(player === 0 ){
-                n.style.backgroundColor = "red";
+                n.style.backgroundColor = "black";
                 player=1;
                 board[numLinha][numCol] = 2
                 
             }else{
-                n.style.backgroundColor = "black";
+                n.style.backgroundColor = "red";
                 player=0; 
                 board[numLinha][numCol] = 1 
 
