@@ -26,8 +26,6 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ]
 
-
-
 boxPlayer[1].style.backgroundColor = "#353b48";
 
 const createDisk = (e) => {
@@ -75,6 +73,15 @@ const animation = (n, i) => {
         { transform: 'translateY(0)' }
       ], {
         duration: 600,
+      });
+}
+
+const animationModais = (item) => {
+    item.animate([
+        { transform: "scale(0)"},
+        { transform: "scale(1)"}
+      ], {
+        duration: 500,
       });
 }
 
