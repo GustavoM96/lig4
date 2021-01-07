@@ -134,7 +134,9 @@ let button = document.getElementById('botao')
         for(let i = 0; i < selecionaCelula.length; i++){
             selecionaCelula[i] = false
             if(selecionaCelula[i] === false){
-                alert
+                alert(empate)
             }
         }
     }
+
+    condicaoDeEmpate()
