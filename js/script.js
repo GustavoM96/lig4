@@ -119,3 +119,5 @@ document.getElementById("escolhaPlayer").addEventListener("click", showModalName
 document.querySelector("#modalResultGame button").addEventListener("click", showModalResultGame)
 
 
+// desabilitar os botoes quando um player vencer, só habilitando-os novamente quando o botao OK
+// for clicado
