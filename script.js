@@ -3,6 +3,7 @@ let player=1;
 let count=5;
 let pontosVermelho = 0
 let pontosPreto = 0
+let contador = 0
 //---Gustavo
 
 
