@@ -3,9 +3,13 @@ const placarPreto = document.getElementById("pontoPreto");
 const placarVermelho = document.getElementById("pontoVermelho");
 const boxPlayer = document.querySelectorAll("#players figure");
 const modalNames = document.getElementById("modal");
+const modalResult = document.getElementById("modalResultGame");
 const locationForName = document.querySelectorAll("figure figcaption p");
+const winnerName = document.querySelector("#modalResultGame h1");
 
 /*Variaveis Globais */
+let playerName1 = "Player1";
+let playerName2 = "Player2";
 let b = 8
 let player=1;
 let count=5;
@@ -22,22 +26,7 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ]
 
-const empate = ()=>{
-
-    if(!conditionWin(board)){
-        for(let i = 0 ; i < board[0].length;i++){
-
-            if(board[0][i] === 0){
-                return false
-            }
-        }
-        return true
-    }
-    return false
-}
-
-
-boxPlayer[0].style.backgroundColor = "#353b48";
+boxPlayer[1].style.backgroundColor = "#353b48";
 
 const createDisk = (e) => {
     contador++;
@@ -75,7 +64,6 @@ const createDisk = (e) => {
 
     conditionWin(board);
     pontuar()
-    conditionWin(board);
     e.stopPropagation();
 }   
 
@@ -88,9 +76,8 @@ const animation = (n, i) => {
       });
 }
 
-const limparMapa = ()=>{
+const limparMapa = () =>{
     let selecionaCelula = document.querySelectorAll('.sectionColuns div')
-    player = 0
     for(let i = 0; i < selecionaCelula.length; i++){
         selecionaCelula[i].style.backgroundColor = ''
     }
@@ -104,6 +91,16 @@ const limparMapa = ()=>{
     ]
 }
 
+const featuredPlayer = () => {
+    if(player === 0){
+        boxPlayer[0].style.backgroundColor = "#353b48";
+        boxPlayer[1].style.backgroundColor = "";
+    }else{
+        boxPlayer[1].style.backgroundColor = "#353b48";
+        boxPlayer[0].style.backgroundColor = "";
+    }
+}
+
 createMap();
 
 document.getElementById("backMove").addEventListener("click", backMove)
@@ -115,5 +112,7 @@ document.getElementById('botao').addEventListener('click', resetar)
 document.getElementById("escolhaPlayer").addEventListener("click", selectNamePlayer)
 
 document.getElementById("escolhaPlayer").addEventListener("click", showModalNamePlayer)
+
+document.querySelector("#modalResultGame button").addEventListener("click", showModalResultGame)
 
 
