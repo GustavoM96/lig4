@@ -22,6 +22,21 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ]
 
+const empate = ()=>{
+
+    if(!conditionWin(board)){
+        for(let i = 0 ; i < board[0].length;i++){
+
+            if(board[0][i] === 0){
+                return false
+            }
+        }
+        return true
+    }
+    return false
+}
+
+
 boxPlayer[0].style.backgroundColor = "#353b48";
 
 const createDisk = (e) => {
@@ -100,3 +115,5 @@ document.getElementById('botao').addEventListener('click', resetar)
 document.getElementById("escolhaPlayer").addEventListener("click", selectNamePlayer)
 
 document.getElementById("escolhaPlayer").addEventListener("click", showModalNamePlayer)
+
+
