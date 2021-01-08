@@ -19,7 +19,7 @@ let pontosPreto = 0;
 let contador = 0;
 let containerPlayer = [];
 let board = [
-    [0, 0, 0, 0, 0, 0, 0],
+    [1, 2, 1, 2, 1, 2, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -44,7 +44,9 @@ const createDisk = (e) => {
 
         if(n.style.backgroundColor === ""){
             if(player === 0 ){
-                n.style.backgroundColor = "red";                
+                n.style.backgroundColor = "red";
+                
+                
                 player=1;
                 board[numLinha][numCol] = 2
                 
@@ -63,10 +65,9 @@ const createDisk = (e) => {
         }
         
     }
+
     conditionWin(board);
     pontuar()
-    if(empate()) showModalResultGame();
-    if(conditionWin(board)) showModalResultGame();
     e.stopPropagation();
 }   
 
@@ -90,6 +91,7 @@ const animationModais = (item) => {
 
 const limparMapa = () =>{
     let selecionaCelula = document.querySelectorAll('.sectionColuns div')
+    
     for(let i = 0; i < selecionaCelula.length; i++){
         selecionaCelula[i].style.backgroundColor = ''
     }
@@ -125,6 +127,8 @@ document.getElementById("escolhaPlayer").addEventListener("click", selectNamePla
 
 document.getElementById("escolhaPlayer").addEventListener("click", showModalNamePlayer)
 
-document.querySelector("#modalResultGame div button").addEventListener("click", showModalResultGame)
+document.querySelector("#modalResultGame button").addEventListener("click", showModalResultGame)
 
-document.querySelector("#modalResultGame div button").addEventListener("click", limparMapa)
+
+// desabilitar os botoes quando um player vencer, só habilitando-os novamente quando o botao OK
+// for clicado
