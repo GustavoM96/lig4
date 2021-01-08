@@ -75,6 +75,11 @@ div.placar{
     text-align: center;
     border-radius: 5px;
     box-shadow: 0 0 15px var(--primary-black);
+    background-image: url("/skull-coin.svg");
+    background-size: 50%;
+    /* background-repeat: no-repeat; */
+    background-position: center;
+  
 }
 
 #modal input{
@@ -193,6 +198,22 @@ button#escolhaPlayer:hover{
 #modalResultGame button:hover{
     background-color: rgba(151, 17, 17, 0.8);
     border:1px solid rgba(255, 255, 255, 0.9);
+    
+   
+    
+    
+}
+
+#modalResultGame{
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    position: absolute;
+    background-color: rgb(0, 0, 0, 0.5);
+    top: 0;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
 }
 
 
