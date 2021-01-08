@@ -44,7 +44,7 @@ const createDisk = (e) => {
 
         if(n.style.backgroundColor === ""){
             if(player === 0 ){
-                n.style.backgroundColor = "red";                
+                n.style.backgroundColor = "red";
                 player=1;
                 board[numLinha][numCol] = 2
                 
@@ -61,9 +61,12 @@ const createDisk = (e) => {
         }
         
     }
+
     conditionWin(board);
     pontuar()
+
     if(empate()) showModalResultGame();
+
     e.stopPropagation();
 }   
 
@@ -87,6 +90,7 @@ const animationModais = (item) => {
 
 const limparMapa = () =>{
     let selecionaCelula = document.querySelectorAll('.sectionColuns div')
+    
     for(let i = 0; i < selecionaCelula.length; i++){
         selecionaCelula[i].style.backgroundColor = ''
     }
@@ -122,6 +126,8 @@ document.getElementById("escolhaPlayer").addEventListener("click", selectNamePla
 
 document.getElementById("escolhaPlayer").addEventListener("click", showModalNamePlayer)
 
-document.querySelector("#modalResultGame div button").addEventListener("click", showModalResultGame)
+document.querySelector("#modalResultGame button").addEventListener("click", showModalResultGame)
 
-document.querySelector("#modalResultGame div button").addEventListener("click", limparMapa)
+document.querySelector("#modalResultGame button").addEventListener("click", limparMapa)
+
+
