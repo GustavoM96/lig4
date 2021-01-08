@@ -84,7 +84,7 @@ const showModalNamePlayer = () => {
 const showModalResultGame = () => {
     if(empate()){
         winnerName.innerText = "Deu empate, vamos jogar novamente";
-        console.log("entrei no empate")
+        
     }else{
         if(player === 0){
             winnerName.innerText = "O vencedor é: " + playerName1;
