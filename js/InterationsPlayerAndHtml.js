@@ -78,7 +78,7 @@ const showModalNamePlayer = () => {
         modalNames.classList.remove("show");
         modalNames.classList.add("hidden");
     }
-    animationModais(modalNames);
+    animationModais(modalAnimadoName);
 }
 
 const showModalResultGame = () => {
@@ -101,5 +101,5 @@ const showModalResultGame = () => {
         modalResult.classList.add("hidden");
     }
 
-    animationModais(modalResult)
+    animationModais(modalAnimadoResult)
 }
