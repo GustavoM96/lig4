@@ -41,8 +41,8 @@ const createDisk = (e) => {
     for(let i=5; i >= 0; i--){
         let n = change[i];
         let numCol = n.parentNode.id[n.parentNode.id.length -1] 
-        let numLinha = n.className[n.className.length -1] 
-
+        let numLinha = n.className[3][n.className[3].length -1] 
+        console.log(n.className[3])
         if(n.style.backgroundColor === ""){
             if(player === 0 ){
                 n.style.backgroundColor = "red";
