@@ -19,7 +19,7 @@ let pontosPreto = 0;
 let contador = 0;
 let containerPlayer = [];
 let board = [
-    [1, 2, 1, 2, 1, 2, 0],
+    [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
