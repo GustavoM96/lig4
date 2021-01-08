@@ -51,8 +51,9 @@ section#players{
     display: flex;
     justify-content: space-around;
 }
+
 div#cells{
-    background-image: url("/skull-coin1.png");
+    background-image: url("../skull-coin1.png");
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
@@ -75,7 +76,7 @@ div.placar{
     text-align: center;
     border-radius: 5px;
     box-shadow: 0 0 15px var(--primary-black);
-    background-image: url("/skull-coin.svg");
+    background-image: url("../skull-coin.svg");
     background-size: 50%;
     /* background-repeat: no-repeat; */
     background-position: center;
