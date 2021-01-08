@@ -3,8 +3,9 @@ const placarPreto = document.getElementById("pontoPreto");
 const placarVermelho = document.getElementById("pontoVermelho");
 const boxPlayer = document.querySelectorAll("#players figure");
 const modalNames = document.getElementById("modal");
+const modalAnimadoName = document.getElementById("newModal");
 const modalResult = document.getElementById("modalResultGame");
-const modalResult1 = document.getElementById("modalBotao")
+const modalAnimadoResult = document.getElementById("newModalResult");
 const locationForName = document.querySelectorAll("figure figcaption p");
 const winnerName = document.querySelector("#modalResultGame h1");
 
