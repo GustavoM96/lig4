@@ -19,7 +19,7 @@ let pontosPreto = 0;
 let contador = 0;
 let containerPlayer = [];
 let board = [
-    [0, 0, 0, 0, 0, 0, 0],
+    [1, 2, 1, 2, 1, 2, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -51,9 +51,7 @@ const createDisk = (e) => {
             }else{
                 n.style.backgroundColor = "black";
                 player=0; 
-                board[numLinha][numCol] = 1
-                
-
+                board[numLinha][numCol] = 1;
             }
 
             containerPlayer.push(n);
@@ -66,7 +64,6 @@ const createDisk = (e) => {
     conditionWin(board);
     pontuar()
     if(empate()) showModalResultGame();
-    if(conditionWin(board)) showModalResultGame();
     e.stopPropagation();
 }   
 
