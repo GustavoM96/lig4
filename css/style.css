@@ -94,6 +94,7 @@ p{
 section#players{
     display: flex;
     justify-content: space-around;
+    margin-top: 15px;
 }
 
 div#cells{
