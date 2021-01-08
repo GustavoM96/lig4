@@ -46,9 +46,6 @@ const conditionWinDiagonalLeft = (status, edgeX, edgeY) => {
     return status; 
 }
 
-
-
-
 const conditionWin = (board) => {
     let status=false;    
     const edgeY=board.length -3;
