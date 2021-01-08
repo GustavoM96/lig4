@@ -45,8 +45,6 @@ const createDisk = (e) => {
         if(n.style.backgroundColor === ""){
             if(player === 0 ){
                 n.style.backgroundColor = "red";
-                
-                
                 player=1;
                 board[numLinha][numCol] = 2
                 
@@ -130,6 +128,6 @@ document.getElementById("escolhaPlayer").addEventListener("click", showModalName
 
 document.querySelector("#modalResultGame button").addEventListener("click", showModalResultGame)
 
+document.querySelector("#modalResultGame button").addEventListener("click", limparMapa)
 
-// desabilitar os botoes quando um player vencer, só habilitando-os novamente quando o botao OK
-// for clicado
+
