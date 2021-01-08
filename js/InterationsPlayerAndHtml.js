@@ -26,7 +26,7 @@ const pontuar = () => {
             pontosVermelho++
             placarVermelho.innerText = `${pontosVermelho}`
         }
-        limparMapa()
+        showModalResultGame();
     }
 }
 
@@ -39,11 +39,10 @@ const backMove = () => {
     board[numLinha][numCol] = 0;
     if(player === 0){
         player = 1;
-        featuredPlayer()
     }else{
         player = 0;
-        featuredPlayer()
     }
+    featuredPlayer()
 }
 
 const selectNamePlayer = () => {
@@ -83,7 +82,6 @@ const showModalNamePlayer = () => {
 }
 
 const showModalResultGame = () => {
-    console.log("ENTREI")
     if(empate()){
         winnerName.innerText = "Deu empate, vamos jogar novamente";
         console.log("entrei no empate")
@@ -93,7 +91,6 @@ const showModalResultGame = () => {
         }else{
             winnerName.innerText = "O vencedor é: " + playerName2;
         }
-        console.log("entrei no ganhar")
     }
 
     if(modalResult.classList.contains("hidden")){
@@ -105,5 +102,4 @@ const showModalResultGame = () => {
     }
 
     animationModais(modalResult)
-    
 }

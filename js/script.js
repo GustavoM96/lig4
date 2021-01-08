@@ -53,9 +53,7 @@ const createDisk = (e) => {
             }else{
                 n.style.backgroundColor = "black";
                 player=0; 
-                board[numLinha][numCol] = 1
-                
-
+                board[numLinha][numCol] = 1;
             }
 
             containerPlayer.push(n);
@@ -68,6 +66,9 @@ const createDisk = (e) => {
 
     conditionWin(board);
     pontuar()
+
+    if(empate()) showModalResultGame();
+
     e.stopPropagation();
 }   
 
