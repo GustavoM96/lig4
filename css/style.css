@@ -63,6 +63,7 @@ img{
     height: 100%;
 
 }
+
 p{
     text-align: center;
     color: var(--primary-text);
@@ -97,13 +98,12 @@ section#players{
     margin-top: 15px;
 }
 
-div#cells{
-    background-image: url("../skull-coin1.png");
+div.cell{
+    background-image: url("../imagens/skull-coin1.png");
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
 }
-
 
 div.placar{
     border: 2px solid var(--primary-body);
@@ -118,7 +118,7 @@ div.placar{
     text-align: center;
     border-radius: 5px;
     box-shadow: 0 0 15px var(--primary-black);
-    background-image: url("../skull-coin.svg");
+    background-image: url("../imagens/skull-coin.svg");
     background-size: 50%;
     background-position: center;
     padding-top: 10px;  
@@ -219,7 +219,6 @@ button#escolhaPlayer:hover{
     align-items: center;
 }
 
-
 @media (min-width: 600px){
     main{
         width: 500px;
@@ -280,7 +279,6 @@ button#escolhaPlayer:hover{
     }
     
 }
-
 
 .showBlock{
     display: block;
