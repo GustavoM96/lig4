@@ -8,7 +8,7 @@ const createMap = () => {
         for(let j = 0; j < 6; j++){
             const createCell = document.createElement("div");
             createCell.classList.add(`cel${j}`)
-            createCell.id ="cells"
+            createCell.classList.add("cell")
             createColum.appendChild(createCell)
             createColum.addEventListener('click', createDisk);
         }
