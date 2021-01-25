@@ -5,10 +5,10 @@ const conditionWinHorizontal = (status, edgeX, edgeY) => {
             if(cell !== 0){
                 if(cell === board[i][j+1] && cell === board[i][j+2] && cell === board[i][j+3]){
                     status= true;
+                    document.getElementsByClassName(`cel${i}`)[j].classList.add("cellWin");
                     document.getElementsByClassName(`cel${i}`)[j+1].classList.add("cellWin");
-                    document.getElementsByClassName(`cel${i+1}`)[j+2].classList.add("cellWin");
-                    document.getElementsByClassName(`cel${i+2}`)[j+3].classList.add("cellWin");
-                    document.getElementsByClassName(`cel${i+3}`)[j+4].classList.add("cellWin");
+                    document.getElementsByClassName(`cel${i}`)[j+2].classList.add("cellWin");
+                    document.getElementsByClassName(`cel${i}`)[j+3].classList.add("cellWin");
                     
                 } 
             }
