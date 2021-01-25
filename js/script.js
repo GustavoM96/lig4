@@ -93,6 +93,7 @@ const limparMapa = () =>{
     
     for(let i = 0; i < selecionaCelula.length; i++){
         selecionaCelula[i].style.backgroundColor = ''
+        selecionaCelula[i].classList.remove("cellWin")
     }
     board = [
         [0, 0, 0, 0, 0, 0, 0],

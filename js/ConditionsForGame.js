@@ -3,7 +3,14 @@ const conditionWinHorizontal = (status, edgeX, edgeY) => {
         for(let j=0;j < edgeX;j++){
             let cell = board[i][j];
             if(cell !== 0){
-                if(cell === board[i][j+1] && cell === board[i][j+2] && cell === board[i][j+3]) status= true;
+                if(cell === board[i][j+1] && cell === board[i][j+2] && cell === board[i][j+3]){
+                    status= true;
+                    document.getElementsByClassName(`cel${i}`)[j+1].classList.add("cellWin");
+                    document.getElementsByClassName(`cel${i+1}`)[j+2].classList.add("cellWin");
+                    document.getElementsByClassName(`cel${i+2}`)[j+3].classList.add("cellWin");
+                    document.getElementsByClassName(`cel${i+3}`)[j+4].classList.add("cellWin");
+                    
+                } 
             }
         }
     }
@@ -15,7 +22,15 @@ const conditionWinVertical = (status, edgeX, edgeY) => {
         for(let j = 0; j < board[0].length; j++) {
             cell = board[i][j];
             if(cell !== 0) {
-                if(cell === board[i+1][j] && cell === board[i+2][j] && cell === board[i+3][j]) status = true;
+                if(cell === board[i+1][j] && cell === board[i+2][j] && cell === board[i+3][j]){
+                    status = true;
+                    document.getElementsByClassName(`cel${i}`)[j].classList.add("cellWin");
+                    document.getElementsByClassName(`cel${i+1}`)[j].classList.add("cellWin");
+                    document.getElementsByClassName(`cel${i+2}`)[j].classList.add("cellWin");
+                    document.getElementsByClassName(`cel${i+3}`)[j].classList.add("cellWin");
+                    
+                } 
+            
             }
         }
     }
@@ -27,7 +42,14 @@ const conditionWinDiagonalRigth = (status, edgeX, edgeY) => {
         for(let j = 0; j < edgeX; j++) {
             cell = board[i][j];
                   if(cell !== 0){
-                        if (cell === board[i+1][j+1] && cell === board[i+2][j+2] && cell === board[i+3][j+3]) status = true;
+                        if (cell === board[i+1][j+1] && cell === board[i+2][j+2] && cell === board[i+3][j+3]){
+                            status = true;
+                            document.getElementsByClassName(`cel${i}`)[j].classList.add("cellWin");
+                            document.getElementsByClassName(`cel${i+1}`)[j+1].classList.add("cellWin");
+                            document.getElementsByClassName(`cel${i+2}`)[j+2].classList.add("cellWin");
+                            document.getElementsByClassName(`cel${i+3}`)[j+3].classList.add("cellWin");
+                            
+                        } 
                 }
         }
     }
@@ -39,7 +61,17 @@ const conditionWinDiagonalLeft = (status, edgeX, edgeY) => {
         for (let j = 0; j < edgeX; j++) {
             cell = board[i][j];        
             if (cell !== 0) {    
-                if(cell === board[i-1][j+1] && cell === board[i-2][j+2] && cell === board[i-3][j+3]) status = true;
+                if(cell === board[i-1][j+1] && cell === board[i-2][j+2] && cell === board[i-3][j+3]){
+                    status = true;
+                    document.getElementsByClassName(`cel${i}`)[j].classList.add("cellWin");
+                    document.getElementsByClassName(`cel${i-1}`)[j+1].classList.add("cellWin");
+                    document.getElementsByClassName(`cel${i-2}`)[j+2].classList.add("cellWin");
+                    document.getElementsByClassName(`cel${i-3}`)[j+3].classList.add("cellWin");
+                            
+                    
+                    
+
+                }
             }
         }
     }
