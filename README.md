@@ -24,4 +24,4 @@ está listado abaixo algumas features que este projeto contém:
 - voltar a jogada
 - placar de vitórias
 
-link para página -> [Lig 4(https://gustavo.hmessias96.gitlab.io/lig4/).
+link para página -> [Lig 4](https://gustavo.hmessias96.gitlab.io/lig4/).
